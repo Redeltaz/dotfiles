@@ -49,11 +49,15 @@ nvim_setup () {
     wget -P $install_path https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
     sudo apt install $install_path/nvim-linux64.deb
     rm $install_path/nvim-linux64.deb
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+    # Needed for treesitter
     sudo apt install -y \
         gcc \
         build-essential \
         aptitude \
-        libstdc++
+        libstdc++6
 }
 
 basic_setup
