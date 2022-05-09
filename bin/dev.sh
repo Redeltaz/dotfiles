@@ -61,6 +61,8 @@ nvim_setup () {
         build-essential \
         aptitude \
         libstdc++6
+    
+    cp -r $install_path/dotfiles/nvim $path/.config/nvim
 
     # Setup fonts for icons
     mkdir -p $path/.local/share/fonts
@@ -68,7 +70,7 @@ nvim_setup () {
     wget -P $install_path/font https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
     unzip $install_path/font/Ubuntu.zip -d $install_path/font/Ubuntu
     cp $install_path/font/Ubuntu/"Ubuntu Nerd Font Complete.ttf" $path/.local/share/fonts
-    wget -p $install_path/font https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip
+    wget -P $install_path/font https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip
     unzip $install_path/font/JetBrainsMono-2.242.zip -d $install_path/font/JetBrains
     cp $install_path/font/JetBrains/fonts/ttf/JetBrainsMono-Regular.ttf $path/.local/share/fonts
 
@@ -82,7 +84,7 @@ tmux_setup () {
     echo "Starting tmux installation"
     echo "--------------------------"
 
-    sudo apt install tmux
+    sudo apt install -y tmux
     git clone https://github.com/tmux-plugins/tpm $path/.tmux/plugins/tpm
     cp $install_path/dotfiles/tmux/tmux.conf $path/.tmux.conf
 }
