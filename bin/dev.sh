@@ -63,12 +63,17 @@ nvim_setup () {
         libstdc++6
 
     # Setup fonts for icons
+    mkdir -p $path/.local/share/fonts
+
     wget -P $install_path/font https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
     unzip $install_path/font/Ubuntu.zip -d $install_path/font/Ubuntu
-    mkdir -p $path/.local/share/fonts
     cp $install_path/font/Ubuntu/"Ubuntu Nerd Font Complete.ttf" $path/.local/share/fonts
+    wget -p $install_path/font https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip
+    unzip $install_path/font/JetBrainsMono-2.242.zip -d $install_path/font/JetBrains
+    cp $install_path/font/JetBrains/fonts/ttf/JetBrainsMono-Regular.ttf $path/.local/share/fonts
 
     fc-cache -fv
+    rm -rf $install_path/font 
 }
 
 tmux_setup () {
@@ -84,3 +89,5 @@ tmux_setup () {
 
 basic_setup
 zsh_setup
+nvim_setup
+tmux_setup
