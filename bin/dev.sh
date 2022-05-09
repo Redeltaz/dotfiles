@@ -49,6 +49,7 @@ nvim_setup () {
     echo "Starting nvim installation"
     echo "--------------------------"
 
+    sudo apt install -y vim
     wget -P $install_path https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
     sudo apt install $install_path/nvim-linux64.deb
     rm $install_path/nvim-linux64.deb
@@ -63,6 +64,7 @@ nvim_setup () {
         libstdc++6
     
     cp -r $install_path/dotfiles/nvim $path/.config/nvim
+    nvim -c "PlugInstall | qa"
 
     # Setup fonts for icons
     mkdir -p $path/.local/share/fonts
@@ -87,9 +89,13 @@ tmux_setup () {
     sudo apt install -y tmux
     git clone https://github.com/tmux-plugins/tpm $path/.tmux/plugins/tpm
     cp $install_path/dotfiles/tmux/tmux.conf $path/.tmux.conf
+    $path/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
 basic_setup
 zsh_setup
 nvim_setup
 tmux_setup
+
+# Finally change the shell
+zsh

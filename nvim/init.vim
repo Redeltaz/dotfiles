@@ -28,17 +28,8 @@ Plug 'nvim-telescope/telescope.nvim' " fuzzy finder
 Plug 'lewis6991/gitsigns.nvim' " git flow
 
 call plug#end()
-" source files
-source $HOME/.config/nvim/keys/mappings.vim
-source $HOME/.config/nvim/colors/tokyonight.lua
-source $HOME/.config/nvim/config/plug-colorizer.lua
-source $HOME/.config/nvim/config/nvim-tree-config.lua
-source $HOME/.config/nvim/config/lsp.lua
-source $HOME/.config/nvim/config/lualine-config.lua
-source $HOME/.config/nvim/config/bufferline-config.lua
-source $HOME/.config/nvim/config/treesitter-config.lua
-source $HOME/.config/nvim/config/telescope.lua
-source $HOME/.config/nvim/config/gitsigns.lua
+" link to all config files
+" source $HOME/.config/nvim/config/sources.vim
 
 " Auto install new plugins
 autocmd VimEnter *
