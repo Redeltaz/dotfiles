@@ -17,6 +17,7 @@ basic_setup () {
     sudo apt install -y \
         curl \
         tar \
+        unzip \
         zsh
 
     git clone https://github.com/Redeltaz/dotfiles $install_path/dotfiles
@@ -27,6 +28,7 @@ zsh_setup () {
     echo "-------------------------"
     echo "Starting zsh installation"
     echo "-------------------------"
+
     echo y | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     sudo usermod -s /bin/zsh $USER
 
@@ -43,9 +45,10 @@ zsh_setup () {
 
 nvim_setup () {
     # set nvim and all the plugins
-    echo "-------------------------"
-    echo "Starting zsh installation"
-    echo "-------------------------"
+    echo "--------------------------"
+    echo "Starting nvim installation"
+    echo "--------------------------"
+
     wget -P $install_path https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb
     sudo apt install $install_path/nvim-linux64.deb
     rm $install_path/nvim-linux64.deb
@@ -58,6 +61,25 @@ nvim_setup () {
         build-essential \
         aptitude \
         libstdc++6
+
+    # Setup fonts for icons
+    wget -P $install_path/font https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
+    unzip $install_path/font/Ubuntu.zip -d $install_path/font/Ubuntu
+    mkdir -p $path/.local/share/fonts
+    cp $install_path/font/Ubuntu/"Ubuntu Nerd Font Complete.ttf" $path/.local/share/fonts
+
+    fc-cache -fv
+}
+
+tmux_setup () {
+    # set tmux and all the plugins
+    echo "--------------------------"
+    echo "Starting tmux installation"
+    echo "--------------------------"
+
+    sudo apt install tmux
+    git clone https://github.com/tmux-plugins/tpm $path/.tmux/plugins/tpm
+    cp $install_path/dotfiles/tmux/tmux.conf $path/.tmux.conf
 }
 
 basic_setup
