@@ -28,11 +28,10 @@ Plug 'nvim-telescope/telescope.nvim' " fuzzy finder
 Plug 'lewis6991/gitsigns.nvim' " git flow
 
 call plug#end()
-" link to all config files
-" source $HOME/.config/nvim/config/sources.vim
 
 " Auto install new plugins
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
+

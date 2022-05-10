@@ -18,7 +18,13 @@ basic_setup () {
         curl \
         tar \
         unzip \
+        wget \
         zsh
+
+    if ! command -v node; then
+        curl -s https://deb.nodesource.com/setup_16.x | sudo bash
+        sudo apt install -y nodejs
+    fi
 
     git clone https://github.com/Redeltaz/dotfiles $install_path/dotfiles
 }
@@ -56,6 +62,14 @@ nvim_setup () {
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+    npm install -g typescript \
+        typescript-language-server \
+        bash-language-sever \
+        dockerfile-language-server-nodejs \
+        vim-language-server \
+        vscode-langservers-extracted \
+        pyright
+
     # Needed for treesitter
     sudo apt install -y \
         gcc \
@@ -64,7 +78,8 @@ nvim_setup () {
         libstdc++6
     
     cp -r $install_path/dotfiles/nvim $path/.config/nvim
-    nvim -c "PlugInstall | qa"
+    nvim "+PlugInstall --sync" +qall
+    echo "source $HOME/.config/nvim/config/sources.vim" >> $path/.config/nvim/init.vim
 
     # Setup fonts for icons
     mkdir -p $path/.local/share/fonts
