@@ -62,7 +62,7 @@ nvim_setup () {
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-    npm install -g typescript \
+    sudo npm install -g typescript \
         typescript-language-server \
         bash-language-sever \
         dockerfile-language-server-nodejs \
@@ -112,5 +112,13 @@ zsh_setup
 nvim_setup
 tmux_setup
 
-# Finally change the shell
-zsh
+cat << EOF
+############################################################
+############################################################
+##### Dev environnement installed, you need to restart #####
+#####    your session to apply last modifications.     #####
+############################################################
+##### You can type 'zsh' to finally change your shell  #####
+############################################################
+############################################################
+EOF
