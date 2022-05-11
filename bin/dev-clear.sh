@@ -48,6 +48,10 @@ revert_command () {
     fc-cache -fv
 }
 
+remove_packages
+remove_content
+revert_command
+
 cat << EOF
 ############################################################
 ############################################################
