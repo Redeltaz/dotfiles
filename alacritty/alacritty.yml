@@ -1,0 +1,104 @@
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 100
+    lines: 30
+  dynamic_padding: true
+  decorations: None
+  title: Alacritty@Garuda
+  opacity: 0.6
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: JetBrains Mono
+    style: Regular
+
+  bold:
+    family:  JetBrains Mono
+    style: Bold
+
+  italic:
+    family:  JetBrains Mono
+    style: Italic
+ 
+  bold_italic:
+    family:  JetBrains Mono
+    style: Bold Italic
+
+  size: 12.0
+
+draw_bold_text_with_bright_colors: true
+
+save_to_clipboard: true
+
+window.dynamic_title: true
+
+live_config_reload: true
+
+mouse:
+  hide_when_typing: true
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+
+colors:
+  primary:
+    background: '0x16161e'
+    foreground: '0xd0d0d0'
+  cursor:
+    text:       '0xd0d0d0'
+    cursor:     '0xd0d0d0'
+  normal:
+    black:      '0x3b4252'
+    red:        '0xbf616a'
+    green:      '0xa3be8c'
+    yellow:     '0xebcb8c'
+    blue:       '0x81a1c1'
+    magenta:    '0xb48ead'
+    cyan:       '0x7aa2f7'
+    white:      '0xe5e9f0'
+  bright:
+    black:      '0x616e88'
+    red:        '0xbf616a'
+    green:      '0xa3be8c'
+    yellow:     '0xebcb8b'
+    blue:       '0x81a1c1'
+    magenta:    '0xb48ead'
+    cyan:       '0x8fbcbb'
+    white:      '0xeceff4'
+      #  normal:
+      #    black:      '0x2e3436'
+      #    red:        '0xcc0000'
+      #    green:      '0x4e9a06'
+      #    yellow:     '0xc4a000'
+      #    blue:       '0x3465a4'
+      #    magenta:    '0x75507b'
+      #    cyan:       '0x06989a'
+      #    white:      '0xd3d7cf'
+      #  bright:
+      #    black:      '0x555753'
+      #    red:        '0xef2929'
+      #    green:      '0x8ae234'
+      #    yellow:     '0xfce94f'
+      #    blue:       '0x729fcf'
+      #    magenta:    '0xad7fa8'
+      #    cyan:       '0x34e2e2'
+      #    white:      '0xeeeeec'
+
