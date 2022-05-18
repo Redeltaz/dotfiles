@@ -9,3 +9,7 @@ if [ "$USER" = "root" ]; then
 else
     path=/home/$USER
 fi
+
+setup_i3 () {
+    echo 'XKBVARIANT="intl"' >> /etc/default/keyboard
+}
