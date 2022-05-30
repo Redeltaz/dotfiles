@@ -84,12 +84,9 @@ nvim_setup () {
     # Setup fonts for icons
     mkdir -p $path/.local/share/fonts
 
-    wget -P $install_path/font https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
-    unzip $install_path/font/Ubuntu.zip -d $install_path/font/Ubuntu
-    cp $install_path/font/Ubuntu/"Ubuntu Nerd Font Complete.ttf" $path/.local/share/fonts
-    wget -P $install_path/font https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip
-    unzip $install_path/font/JetBrainsMono-2.242.zip -d $install_path/font/JetBrains
-    cp $install_path/font/JetBrains/fonts/ttf/JetBrainsMono-Regular.ttf $path/.local/share/fonts
+    wget -P $install_path/font https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+    unzip $install_path/font/JetBrainsMono.zip -d $install_path/font/Jetbrainsmono
+    cp $install_path/font/Jetbrainsmono/"JetBrains Mono Regular Nerd Font Complete.ttf" $path/.local/share/fonts
 
     fc-cache -fv
     rm -rf $install_path/font 
