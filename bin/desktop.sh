@@ -13,3 +13,9 @@ fi
 setup_i3 () {
     echo 'XKBVARIANT="intl"' >> /etc/default/keyboard
 }
+
+install_i3_software () {
+    sudo apt install -y \
+        pavucontrol \
+        lxappearance
+}
