@@ -17,5 +17,6 @@ setup_i3 () {
 install_i3_software () {
     sudo apt install -y \
         pavucontrol \
-        lxappearance
+        lxappearance \
+        flameshot
 }
