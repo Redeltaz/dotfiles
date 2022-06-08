@@ -3,6 +3,13 @@ require'nvim-tree'.setup {
         enable = true,
         update_cwd = true,
         ignore_list = {}
+    },
+    filters = {
+        dotfiles = false
+    },
+    git = {
+        enable = true,
+        ignore = false
     }
 }
 require'nvim-web-devicons'.setup()
