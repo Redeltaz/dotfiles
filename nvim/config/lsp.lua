@@ -57,3 +57,5 @@ for _, lsp in pairs(servers) do
     capabilities = capabilities
   }
 end
+
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
