@@ -18,5 +18,7 @@ install_i3_software () {
     sudo apt install -y \
         pavucontrol \
         lxappearance \
-        flameshot
+        flameshot \
+        fonts-material-design-icons-iconfont \
+        fonts-font-awesome
 }
