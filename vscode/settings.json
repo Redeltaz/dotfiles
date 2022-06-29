@@ -1,0 +1,13 @@
+{
+    "workbench.sideBar.location": "left",
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontWeight": "600",
+    "editor.fontSize": 16,
+    "editor.letterSpacing": 0.9,
+    "editor.lineHeight": 20,
+    "editor.fontLigatures": false,
+}
