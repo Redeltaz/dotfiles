@@ -19,7 +19,7 @@ I tried to make an environment that is closest to the colors of the splendid vsc
 
 |   |   |
 |---|---|
-|**OS**| [Ubuntu](https://ubuntu.com/) |
+|**OS**| [Arch](https://archlinux.fr/) |
 | **WM** | [i3](https://github.com/i3/i3) |
 | **Terminal** | [Alacritty](https://github.com/alacritty/alacritty) |
 | **Shell** | [zsh](https://github.com/ohmyzsh/ohmyzsh) |
