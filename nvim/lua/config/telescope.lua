@@ -10,5 +10,3 @@ require('telescope').setup{
     }
   },
 }
-
-vim.cmd('nnoremap <silent> <C-f> :Telescope find_files<CR>')

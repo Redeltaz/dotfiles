@@ -13,6 +13,3 @@ require'nvim-tree'.setup {
     }
 }
 require'nvim-web-devicons'.setup()
-
-vim.cmd('nnoremap <silent> <C-n> :NvimTreeToggle<CR>')
-vim.cmd('noremap <silent> <C-h> :NvimTreeFocus<CR>')
