@@ -169,12 +169,14 @@ bindsym $mod+r mode "resize"
 bindsym $alt+s exec "rofi -show drun"
 bindsym $alt+t exec "alacritty"
 bindsym $mod+Escape exec "i3lock -i ~/Pictures/Wallpapers/lockscreen.png -t"
+bindsym $mod+Return exec --no-startup-id alacritty -t 'alacritty-floating'
+for_window [title="^alacritty-floating$"] floating enable, move position center
 
 gaps inner 20
 
 client.focused #ffffff #ffffff #ffffff #9fa7ca     #9fa7ca
 for_window [class=".*"] border pixel 4
 
-exec_always feh --bg-fill $HOME/Pictures/Wallpapers/wallpaper2.png
+exec_always feh --bg-fill $HOME/Pictures/Wallpapers/wallpaper.png
 exec_always $HOME/.config/polybar/launch.sh
 exec_always setxkbmap us -variant intl
