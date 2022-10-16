@@ -22,3 +22,6 @@ alias pip="pip3"
 alias python="python3"
 alias vi="nvim"
 alias vim="nvim"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+neofetch --block_range 0 7 --block_height 2
