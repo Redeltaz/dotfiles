@@ -11,9 +11,13 @@ I tried to make an environment that is closest to the colors of the splendid vsc
 
 ## Installation
 
-*working on it*
-<br>
-<br>
+Be sure to have at leat curl installed (and your network can reach internet)
+
+Then you can type :
+```bash
+curl -fsSL https://redeltaz.github.io/dotfiles/bin/install.sh | bash
+```
+Everything will be auto installed. If an error appear, you can create an [issue](https://github.com/Redeltaz/dotfiles/issues/new)
 
 ## Informations
 
@@ -24,7 +28,7 @@ I tried to make an environment that is closest to the colors of the splendid vsc
 | **Terminal** | [Alacritty](https://github.com/alacritty/alacritty) |
 | **Shell** | [zsh](https://github.com/ohmyzsh/ohmyzsh) |
 | **Editor** | [neovim](https://github.com/neovim/neovim) |
-| **Status Bar** | [Polybar](https://github.com/polybar/polybar) |
+| **Status Bar** | [polybar](https://github.com/polybar/polybar) |
 | **App Launcher** | [rofi](https://github.com/davatorium/rofi) |
 | **Notifications** | [dunst](https://github.com/dunst-project/dunst) |
 | **Terminal Multiplexer** | [tmux](https://github.com/tmux/tmux) |
