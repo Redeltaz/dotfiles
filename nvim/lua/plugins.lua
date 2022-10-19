@@ -60,9 +60,13 @@ return require('packer').startup(function()
     -- Syntax colorizer
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
+    use 'andweeb/presence.nvim'
+
     -- Markdown preview
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+
+    use 'pearofducks/ansible-vim'
 end)
