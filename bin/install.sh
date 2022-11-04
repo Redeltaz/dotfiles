@@ -123,7 +123,8 @@ install_utils () {
         libnotify \
         rofi \
         firefox \
-        yay 
+        yay \
+        exa
 
     mkdir -p $path/.config/rofi
     cp $install_path/rofi/config.rasi $path/.config/rofi/
