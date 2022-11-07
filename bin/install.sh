@@ -125,7 +125,8 @@ install_utils () {
         firefox \
         yay \
         exa \
-        fzf
+        fzf \
+        the_silver_searcher
 
     mkdir -p $path/.config/rofi
     cp $install_path/rofi/config.rasi $path/.config/rofi/

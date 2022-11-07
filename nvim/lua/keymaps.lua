@@ -42,6 +42,9 @@ keymap("n", "<C-f>", ":Telescope find_files<CR>", opts)
 -- ToggleTerm
 keymap("n", "<C-Space>", ":ToggleTerm direction=float<CR>", opts)
 
+-- FZF grep on all files
+keymap("n", "<C-a>", ":Ag<CR>", opts)
+
 -- VISUAL
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

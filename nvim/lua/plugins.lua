@@ -69,4 +69,8 @@ return require('packer').startup(function()
     })
 
     use 'pearofducks/ansible-vim'
+
+    -- Fuzzyfinder for files grep
+    use {'junegunn/fzf', run = './install --all' }
+    use 'junegunn/fzf.vim'
 end)
