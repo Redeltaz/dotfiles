@@ -1,85 +1,85 @@
-env:
-  TERM: xterm-256color
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night
+    # Default colors
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
 
-window:
-  dimensions:
-    columns: 100
-    lines: 30
-  dynamic_padding: true
-  decorations: None
-  title: Alacritty@Garuda
-  opacity: 0.6
-  class:
-    instance: Alacritty
-    general: Alacritty
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
 
-scrolling:
-  history: 10000
-  multiplier: 3
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x9699a8'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+colors: *tokyo-night
 
 font:
   normal:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
 
   bold:
-    family:  JetBrains Mono Nerd Font
-    style: Bold
+    family: JetBrainsMono Nerd Font
+    style: Extra Bold
 
   italic:
-    family:  JetBrains Mono Nerd Font
-    style: Italic
- 
+    family: JetBrainsMono Nerd Font
+    style: Medium Italic
+
   bold_italic:
-    family:  JetBrains Mono Nerd Font
-    style: Bold Italic
+    family: JetBrainsMono Nerd Font
+    style: Extra Bold Italic
 
-  size: 12.0
+  size: 7.5
 
-draw_bold_text_with_bright_colors: true
-
-save_to_clipboard: true
-
-window.dynamic_title: true
-
-live_config_reload: true
-
-mouse:
-  hide_when_typing: true
-
-key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-
-colors:
-  primary:
-    background: '0x16161e'
-    foreground: '0xd0d0d0'
-  cursor:
-    text:       '0xd0d0d0'
-    cursor:     '0xd0d0d0'
-  normal:
-    black:      '0x3b4252'
-    red:        '0xbf616a'
-    green:      '0xa3be8c'
-    yellow:     '0xebcb8c'
-    blue:       '0x81a1c1'
-    magenta:    '0xb48ead'
-    cyan:       '0x7aa2f7'
-    white:      '0xe5e9f0'
-  bright:
-    black:      '0x616e88'
-    red:        '0xbf616a'
-    green:      '0xa3be8c'
-    yellow:     '0xebcb8b'
-    blue:       '0x81a1c1'
-    magenta:    '0xb48ead'
-    cyan:       '0x8fbcbb'
-    white:      '0xeceff4'
+#window:
+  #padding:
+    #x: 8
+    #y: 8
