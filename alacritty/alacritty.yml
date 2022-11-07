@@ -6,7 +6,7 @@ schemes:
     # Default colors
     primary:
       background: '0x1a1b26'
-      foreground: '0xa9b1d6'
+      foreground: '0xe5e9f0'
 
     # Normal colors
     normal:
@@ -79,7 +79,8 @@ font:
 
   size: 7.5
 
-#window:
+window:
+  dynamic_padding: true
   #padding:
     #x: 8
     #y: 8
