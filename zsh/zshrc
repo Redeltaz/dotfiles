@@ -34,3 +34,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/home/lcampistron/.local/bin/"
 alias ls="exa"
 alias l="exa -la --icons"
+
+# init fzf keybindings
+source /usr/share/fzf/key-bindings.zsh

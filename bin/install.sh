@@ -124,7 +124,8 @@ install_utils () {
         rofi \
         firefox \
         yay \
-        exa
+        exa \
+        fzf
 
     mkdir -p $path/.config/rofi
     cp $install_path/rofi/config.rasi $path/.config/rofi/
