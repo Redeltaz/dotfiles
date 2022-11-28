@@ -32,3 +32,4 @@ Everything will be auto installed. If an error appear, you can create an [issue]
 | **App Launcher** | [rofi](https://github.com/davatorium/rofi) |
 | **Notifications** | [dunst](https://github.com/dunst-project/dunst) |
 | **Terminal Multiplexer** | [tmux](https://github.com/tmux/tmux) |
+| **Compositor** | [picom](https://github.com/yshui/picom) |
