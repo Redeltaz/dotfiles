@@ -126,7 +126,8 @@ install_utils () {
         yay \
         exa \
         fzf \
-        the_silver_searcher
+        the_silver_searcher \
+        network-manager-applet
 
     mkdir -p $path/.config/rofi
     cp $install_path/rofi/config.rasi $path/.config/rofi/
