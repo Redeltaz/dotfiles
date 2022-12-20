@@ -10,7 +10,7 @@ if [ "$DISTRO" != "Arch Linux" ]; then
 fi
 
 if [[ "$PYTHON_VERSION" < 3 ]]; then
-    echo "Please install at leat python3."
+    echo "Please install at leat Python 3."
     exit 1
 fi
 
