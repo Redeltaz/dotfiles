@@ -7,10 +7,16 @@ PYTHON_VERSION=$(python --version | cut -d " " -f2 | cut -d "." -f1)
 
 if [ "$DISTRO" != "Arch Linux" ]; then
     echo "This distribution is not supported for the moment."
+    exit 1
 fi
 
 if [[ "$PYTHON_VERSION" < 3 ]]; then
     echo "Please install at leat Python 3."
+    exit 1
+fi
+
+if ! git --version > /dev/null; then
+    echo "You need to install git."
     exit 1
 fi
 
@@ -19,6 +25,16 @@ fi
 set -e
 
 cd ~
+
+#TODO: check if cli seem already install and maybe say if the user want to reinstall
+#remove_old_content() {
+    #EXISTING_PATH=$(cat ~/${SHELL_FILE} | grep -n "export PATH="\$PATH:\$HOME/.dotfiles/bin"")
+
+    #if [[ ! -z "$EXISTING_PATH" ]] ; then
+        #LINE_NUMBER=$(echo $EXISTING_PATH | cut -d : -f 1)
+        #sed -i "${LINE_NUMBER}d" ~/$SHELL_FILE
+    #fi
+#}
 
 if [ -d "./.dotfiles" ]; then
     while true; do
