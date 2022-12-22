@@ -4,7 +4,7 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("action", nargs="?", choices=["install", "uninstall", "update"],
+parser.add_argument("action", nargs="?", choices=["install", "use", "uninstall", "update"],
                     help="Chose what action to execute")
 parser.add_argument('--skip', "-s", nargs="*", default=False,
                     help='If set, software choosed while not be affected by the action.')
@@ -16,7 +16,7 @@ if not args.action:
     print("You need to choose an action")
     exit(1)
 
-softwares = [
+supported_softwares = (
     "alacritty",
     "dunst",
     "firefox",
@@ -28,4 +28,15 @@ softwares = [
     "rofi",
     "tmux",
     "zsh"
-]
+)
+
+software_list = list(supported_softwares)
+
+for skip in args.skip:
+    if skip not in supported_softwares:
+        print(f"The software '{skip}' is not supported.")
+        exit(1)
+    else:
+        software_list.remove(skip)
+
+print(software_list)
