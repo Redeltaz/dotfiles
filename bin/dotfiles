@@ -38,5 +38,4 @@ for skip in args.skip:
         exit(1)
     else:
         software_list.remove(skip)
-
 print(software_list)
