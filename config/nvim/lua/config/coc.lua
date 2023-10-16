@@ -114,3 +114,22 @@ keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
 keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+
+-- List of coc plugins
+vim.g.coc_global_extensions = { 
+    'coc-css', 
+    'coc-deno',
+    'coc-go',
+    'coc-html',
+    'coc-json',
+    'coc-markdownlint',
+    'coc-phpls',
+    'coc-pyright',
+    'coc-sh',
+    'coc-sql',
+    'coc-toml',
+    'coc-tsserver',
+    'coc-vimlsp',
+    'coc-yaml',
+    'coc-snippets'
+}

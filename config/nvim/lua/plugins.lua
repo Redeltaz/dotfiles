@@ -73,4 +73,8 @@ return require('packer').startup(function()
     -- Fuzzyfinder for files grep
     use {'junegunn/fzf', run = './install --all' }
     use 'junegunn/fzf.vim'
+
+    use 'rafamadriz/friendly-snippets'
+
+    use 'chr4/nginx.vim'
 end)

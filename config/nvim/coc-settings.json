@@ -10,11 +10,7 @@
             "args": ["serve"],
             "filetypes": ["terraform", "tf"],
             "initializationOptions": {}
-        },
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": ["go.mod"],
-            "filetypes": ["go"]
         }
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }
