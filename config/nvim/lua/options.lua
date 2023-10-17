@@ -6,3 +6,5 @@ vim.opt.termguicolors = true --allow terminal colors
 vim.opt.tabstop = 4 --max width of a tab character
 vim.opt.shiftwidth = 4 --size of and indent
 vim.opt.expandtab = true --tab key insert spaces instead of tab
+
+vim.cmd('cd %:h')

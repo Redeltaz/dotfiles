@@ -60,8 +60,6 @@ return require('packer').startup(function()
     -- Syntax colorizer
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
-    use 'andweeb/presence.nvim'
-
     -- Markdown preview
     use({
         "iamcco/markdown-preview.nvim",
