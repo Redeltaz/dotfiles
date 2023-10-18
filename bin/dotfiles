@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("action", nargs="?", choices=["install", "use", "uninstall", "update"],
-                    help="Chose what action to execute")
+parser.add_argument("action", nargs="?", choices=["sync", "unlink", "copy"],
+                    help="Choose what action to execute")
 parser.add_argument('--skip', "-s", nargs="*", default=False,
                     help='If set, software choosed while not be affected by the action.')
 
@@ -18,14 +18,9 @@ if not args.action:
 
 supported_softwares = (
     "alacritty",
-    "dunst",
     "firefox",
     "git",
-    "i3",
     "nvim",
-    "picom",
-    "polybar",
-    "rofi",
     "tmux",
     "zsh"
 )
