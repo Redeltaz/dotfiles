@@ -3,7 +3,7 @@
 GIT_URL=https://github.com/Redeltaz/dotfiles
 
 #DISTRO=$(cat /etc/*-release | grep NAME | head -n 1 | cut -d'"' -f2)
-PYTHON_VERSION=$(python --version | cut -d " " -f2 | cut -d "." -f1)
+PYTHON_VERSION=$(python3 --version | cut -d " " -f2 | cut -d "." -f1)
 
 #if [ "$DISTRO" != "Arch Linux" ]; then
     #echo "This distribution is not supported for the moment."

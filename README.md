@@ -15,7 +15,7 @@ Be sure to have at leat curl installed (and your network can reach internet)
 
 Then you can type :
 ```bash
-curl -fsSL https://redeltaz.github.io/dotfiles/bin/install.sh | bash
+curl -fsSL https://redeltaz.github.io/dotfiles/etc/install | bash
 ```
 Everything will be auto installed. If an error appear, you can create an [issue](https://github.com/Redeltaz/dotfiles/issues/new)
 
