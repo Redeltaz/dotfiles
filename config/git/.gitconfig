@@ -1,18 +1,14 @@
-[includeIf "gitdir:~/"]
-    path = ~/.config/git/profiles/personal
-[includeIf "gitdir:~/Documents/Claranet/"]
-    path = ~/.config/git/profiles/claranet
-
 [init]
     defaultBranch = main
 
 [core]
-    editor = vim
+    editor = nvim
 
 [alias]
     s = status
     a = add
     c = commit
     cm = commit -m
+    cma = commit --amend
     ac = commit -a -m
     l = log --pretty='format:%C(yellow)[%h | %ad%Cred%d%C(yellow)] %Creset%s%Cblue | [%cn]' --date=short
