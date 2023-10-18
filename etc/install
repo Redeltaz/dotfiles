@@ -2,20 +2,20 @@
 
 GIT_URL=https://github.com/Redeltaz/dotfiles
 
-DISTRO=$(cat /etc/*-release | grep NAME | head -n 1 | cut -d'"' -f2)
+#DISTRO=$(cat /etc/*-release | grep NAME | head -n 1 | cut -d'"' -f2)
 PYTHON_VERSION=$(python --version | cut -d " " -f2 | cut -d "." -f1)
 
-if [ "$DISTRO" != "Arch Linux" ]; then
-    echo "This distribution is not supported for the moment."
-    exit 1
-fi
+#if [ "$DISTRO" != "Arch Linux" ]; then
+    #echo "This distribution is not supported for the moment."
+    #exit 1
+#fi
 
 if [[ "$PYTHON_VERSION" < 3 ]]; then
-    echo "Please install at leat Python 3."
+    echo "Please install at least Python 3."
     exit 1
 fi
 
-if ! git --version > /dev/null; then
+if ! command -v git &> /dev/null
     echo "You need to install git."
     exit 1
 fi
