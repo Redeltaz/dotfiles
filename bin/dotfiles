@@ -12,10 +12,6 @@ parser.add_argument('--skip', "-s", nargs="*", default=False,
 args = parser.parse_args()
 print(args)
 
-if not args.action:
-    print("You need to choose an action")
-    exit(1)
-
 supported_softwares = (
     "alacritty",
     "firefox",
@@ -25,12 +21,44 @@ supported_softwares = (
     "zsh"
 )
 
-software_list = list(supported_softwares)
+class CLI:
+    def __init__(self, supported_softwares, arg_list):
+        self.args = arg_list
+        self.software_list = list(supported_softwares)
 
-for skip in args.skip:
-    if skip not in supported_softwares:
-        print(f"The software '{skip}' is not supported.")
-        exit(1)
-    else:
-        software_list.remove(skip)
-print(software_list)
+    def init(self):
+        if not self.args.action:
+            print("You need to choose an action")
+            exit(1)
+        if self.args.skip:
+            for skip in self.args.skip:
+                if skip not in self.software_list:
+                    print(f"The software '{skip}' is not supported to skip.")
+                    exit(1)
+                else:
+                    self.software_list.remove(skip)
+
+    def exec(self, action):
+        if action == "pull":
+            self.pull()
+        elif action == "sync":
+            self.sync()
+        elif action == "unlink":
+            self.unlink()
+        else:
+            print("This action does not exist")
+            exit(1)
+
+    def pull(self):
+        print("pull")
+
+    def sync(self):
+        print("sync")
+
+    def unlink(self):
+        print("unlink")
+
+
+dotfiles = CLI(supported_softwares, args)
+dotfiles.init()
+dotfiles.exec(args.action)
