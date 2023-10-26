@@ -48,6 +48,7 @@ keymap("n", "<C-a>", ":Ag<CR>", opts)
 -- VISUAL
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
