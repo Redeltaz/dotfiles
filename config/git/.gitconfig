@@ -1,3 +1,4 @@
+# Contain name, email and signingkey
 [include]
     path = ~/.config/git/profile
 
@@ -15,3 +16,6 @@
     cma = commit --amend
     ac = commit -a -m
     l = log --pretty='format:%C(yellow)[%h | %ad%Cred%d%C(yellow)] %Creset%s%Cblue | [%cn]' --date=short
+
+[commit]
+    gpgsign = true
