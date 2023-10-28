@@ -2,6 +2,11 @@ local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+local abbrev = vim.cmd.cabbrev
+
+-------------
+-- KEYMAPS --
+-------------
 
 -- NORMAL
 -- Split windows navigation
@@ -58,3 +63,34 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Comment line
 keymap("v", "<C-_>", ":call nerdcommenter#Comment(0, 'toggle')<CR>", opts)
+
+
+-------------------
+-- ABBREVIATIONS --
+-------------------
+
+-- remap to correct writting mistakes that can happen
+abbrev("W!", "w!")
+abbrev("W1", "w!")
+abbrev("w1", "w!")
+abbrev("Q!", "q!")
+abbrev("Q1", "q!")
+abbrev("q1", "q!")
+abbrev("Qa!", "qa!")
+abbrev("Qall!", "qall!")
+abbrev("Wa", "wa")
+abbrev("Wq", "wq")
+abbrev("wQ", "wq")
+abbrev("WQ", "wq")
+abbrev("wq1", "wq!")
+abbrev("Wq1", "wq!")
+abbrev("wQ1", "wq!")
+abbrev("WQ1", "wq!")
+abbrev("W", "w")
+abbrev("Q", "q")
+abbrev("Q!", "q!")
+abbrev("q1", "q!")
+abbrev("Q1", "q!")
+abbrev("Qa", "qa")
+abbrev("Qall", "qall")
+
