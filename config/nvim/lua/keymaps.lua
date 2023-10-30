@@ -94,3 +94,4 @@ abbrev("Q1", "q!")
 abbrev("Qa", "qa")
 abbrev("Qall", "qall")
 
+abbrev("mdp", "MarkdownPreview")
