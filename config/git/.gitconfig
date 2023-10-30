@@ -13,9 +13,29 @@
     a = add
     c = commit
     cm = commit -m
-    cma = commit --amend
+    cma = commit --amend --reuse-message=HEAD
     ac = commit -a -m
-    l = log --pretty='format:%C(yellow)[%h | %ad%Cred%d%C(yellow)] %Creset%s%Cblue | [%cn]' --date=short
+    l = log --pretty='format:%C(yellow)[%h | %ad%Cred%d%C(yellow)] %Creset%s%Cblue | [%cn]' --date=short --graph
+    d = !"git --no-pager diff"
+
+    # Pretty graph visualisation
+    graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[push]
+	autoSetupRemote = true
 
 [commit]
     gpgsign = true
+
+[pull]
+	rebase = true
