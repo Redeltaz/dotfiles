@@ -3,37 +3,39 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
 # List of plugins 
-plugins=(zsh-autosuggestions)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git zsh-autosuggestions)
 
 # Activate p10k theme
+source $ZSH/oh-my-zsh.sh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # List of alias
 alias pip="pip3"
 alias python="python3"
+alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-neofetch --block_range 0 7 --block_height 2
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$PATH:/home/lcampistron/.local/bin/"
 alias ls="exa"
 alias l="exa -la --icons"
+alias gg="ping 8.8.8.8"
+alias k="kubectl"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+
+export PATH="$PATH:/home/lcampistron/.local/bin/"
+export PATH=$PATH:$HOME/.dotfiles/bin
 
 # init fzf keybindings
-source /usr/share/fzf/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# init asdf 
+. "$HOME/.asdf/asdf.sh"
