@@ -2,8 +2,13 @@
 
 set -e
 
+if ! command -v git &> /dev/null; then
+    echo "You need to install git."
+    exit 1
+fi
+
 dotfiles_config="~/.dotfiles/config"
-arg_list=("sync" "link" "install")
+arg_list=("pull" "link" "install")
 
 if [ -d "$dotfiles_config" ]; then
     echo "The folder $dotfiles_config does not exist."
@@ -25,14 +30,19 @@ install () {
     echo "install"
 }
 
-# Synchronize config with remote on git
-sync () {
+# Pull remote config to synchronize
+pull () {
     git pull
 }
 
 # Link local config to dotfiles folder
 link () {
-    echo "link"
+    ln -sf $HOME/.dotfiles/config/git/.gitconfig ~/.gitconfig
+    ln -sf $HOME/.dotfiles/config/nvim ~/.config/
+    ln -sf $HOME/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf
+    ln -sf $HOME/.dotfiles/config/zsh/.zshrc ~/.zshrc
+
+    echo "Dotfiles config successfully linked!"
 }
 
 if [[ ! " ${arg_list[*]} " == *" $1 "* ]]; then
@@ -41,8 +51,8 @@ if [[ ! " ${arg_list[*]} " == *" $1 "* ]]; then
 else
     if [ "$1" == "install" ]; then
         install
-    elif [ "$1" == "sync" ]; then
-        sync
+    elif [ "$1" == "pull" ]; then
+        pull
     elif [ "$1" == "link" ]; then
         link
     else
