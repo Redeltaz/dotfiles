@@ -11,8 +11,13 @@ Then you can type :
 ```bash
 curl -fsSL https://redeltaz.github.io/dotfiles/etc/install | bash
 ```
-The dotfiles CLI will be installed and usable to manage the config. If an error appear, you can create an [issue](https://github.com/Redeltaz/dotfiles/issues/new)
 
+You now have to add the `~/.dotfiles/bin` folder into `$PATH` :
+```bash
+echo "export PATH="$HOME/.dotfiles/bin"" >> ~/.zshrc
+```
+
+The dotfiles CLI will be installed and usable to manage the config. If an error appear, you can create an [issue](https://github.com/Redeltaz/dotfiles/issues/new)
 ## Informations
 
 |   |   |
