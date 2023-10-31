@@ -3,17 +3,11 @@
 GIT_URL=https://github.com/Redeltaz/dotfiles
 
 #DISTRO=$(cat /etc/*-release | grep NAME | head -n 1 | cut -d'"' -f2)
-PYTHON_VERSION=$(python3 --version | cut -d " " -f2 | cut -d "." -f1)
 
 #if [ "$DISTRO" != "Arch Linux" ]; then
     #echo "This distribution is not supported for the moment."
     #exit 1
 #fi
-
-if [[ "$PYTHON_VERSION" < 3 ]]; then
-    echo "Please install at least Python 3."
-    exit 1
-fi
 
 if ! command -v git &> /dev/null; then
     echo "You need to install git."
@@ -26,22 +20,12 @@ set -e
 
 cd ~
 
-#TODO: check if cli seem already install and maybe say if the user want to reinstall
-#remove_old_content() {
-    #EXISTING_PATH=$(cat ~/${SHELL_FILE} | grep -n "export PATH="\$PATH:\$HOME/.dotfiles/bin"")
-
-    #if [[ ! -z "$EXISTING_PATH" ]] ; then
-        #LINE_NUMBER=$(echo $EXISTING_PATH | cut -d : -f 1)
-        #sed -i "${LINE_NUMBER}d" ~/$SHELL_FILE
-    #fi
-#}
-
 if [ -d "./.dotfiles" ]; then
     while true; do
         read -p "~/.dotfiles directory already exist, do you want to remove it ? (y/n)" yn
         case $yn in
             [Yy]* ) rm -rf ./.dotfiles; echo "Removing ~/.dotfiles folder..."; break;;
-            [Nn]* ) echo "Interrupting installation, directory need to be removed manually or by the installation process."; exit 1;;
+            [Nn]* ) echo "You should remove you .dotfiles folder because it could make some conflicts"; exit 1;;
             * ) echo "Please answer y or n.";;
         esac
     done
@@ -49,10 +33,5 @@ fi
 
 echo "Installing the cli..."
 git clone --quiet $GIT_URL ~/.dotfiles
-
-CURRENT_SHELL=$(echo $SHELL | sed 's/.*\///')
-SHELL_FILE=".${CURRENT_SHELL}rc"
-
-echo "export PATH="\$PATH:\$HOME/.dotfiles/bin"" >> ./$SHELL_FILE
 
 echo "The CLI is now installed, you can start using it by reloading your terminal or sourcing your shell file"
