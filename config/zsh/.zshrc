@@ -31,8 +31,7 @@ alias k="kubectl"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 
-export PATH="$PATH:/home/lcampistron/.local/bin/"
-export PATH=$PATH:$HOME/.dotfiles/bin
+export PATH="$PATH:$HOME/.local/bin/:$HOME/.dotfiles/bin"
 
 # init fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
