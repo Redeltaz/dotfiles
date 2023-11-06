@@ -1,4 +1,4 @@
-vim.opt.cursorline = true --highlight selected line
+--vim.opt.cursorline = true --highlight selected line
 vim.opt.number = true --show line number
 vim.opt.clipboard = "unnamedplus" --allow copy past inside and outside vim
 vim.opt.wrap = false --unwrap lines

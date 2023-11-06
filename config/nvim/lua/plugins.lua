@@ -75,4 +75,13 @@ return require('packer').startup(function()
     use 'rafamadriz/friendly-snippets'
 
     use 'chr4/nginx.vim'
+
+    -- better navigation
+    use 'ggandor/leap.nvim'
+
+    -- surround bracket, quotes...
+    use 'tpope/vim-surround'
+
+    -- git blame
+    use 'f-person/git-blame.nvim'
 end)
