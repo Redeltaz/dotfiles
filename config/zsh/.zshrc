@@ -30,6 +30,7 @@ alias gg="ping 8.8.8.8"
 alias k="kubectl"
 alias dc="docker compose"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias tf="terraform"
 
 
 export PATH="$PATH:$HOME/.local/bin/:$HOME/.dotfiles/bin"
