@@ -1,7 +1,7 @@
 # Dotfiles
 
 All my dotfiles, I used to be on Arch on full DIY config with i3 but I now moved to Gnome for simplicity.
-All my old config for dunst, i3, polybar... is still available on the [legacy](./legacy/) folder.
+All my old config for dunst, i3, polybar... is still available on the [legacy](https://github.com/Redeltaz/dotfiles/tree/legacy) branch.
 
 ## Installation
 
